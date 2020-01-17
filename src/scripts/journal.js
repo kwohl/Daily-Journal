@@ -19,4 +19,4 @@ journalEntries.push(journalEntryHTML);
 journalEntries.push(journalEntryCSS);
 
 
-console.log("hello world");
+console.log(journalEntries);
