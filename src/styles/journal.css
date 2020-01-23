@@ -2,3 +2,12 @@ fieldset {
     display: flex;
     flex-direction: column;
 }
+
+ul {
+    list-style: none;
+}
+
+.entryLog {
+    display: flex;
+    flex-direction: column-reverse;
+}

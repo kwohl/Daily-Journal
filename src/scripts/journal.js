@@ -27,6 +27,44 @@ const journalEntries = [
 
 ];
 
-journalEntries.push(journalEntry);
+// journalEntries.push(journalEntry);
 
 console.log(journalEntries);
+
+
+/*
+    Purpose: To create, and return, a string template that
+    represents a single journal entry object as HTML
+
+    Arguments: journalEntry (object)
+*/
+const makeJournalEntryComponent = (journalEntry) => {
+    // Create your own HTML structure for a journal entry
+    return `
+    <section class="entry">
+    <ul>
+        <li>Date: ${journalEntry.date}</li>
+        <li>Concept: ${journalEntry.concept}</li>
+        <li>Entry: ${journalEntry.entry}</li>
+        <li>Mood: ${journalEntry.mood}</li>
+    </ul>
+    </section>
+
+    `;
+}
+
+/*
+    Purpose: To render all journal entries to the DOM
+
+    Arguments: entries (array of objects)
+*/
+const renderJournalEntries = (entries) => {
+    const entriesContainer = document.querySelector(".entryLog");
+    entries.forEach(entry => {
+        const journalHtml = makeJournalEntryComponent(entry);
+        entriesContainer.innerHTML += journalHtml;
+    });
+}
+
+// Invoke the render function
+renderJournalEntries(journalEntries)
