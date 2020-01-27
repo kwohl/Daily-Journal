@@ -5,32 +5,13 @@ const journalEntry = {
     mood: ""
 };
 
-// const journalEntries = [
-//     {
-//         date: "20/01/20",
-//         concept: "Building DOM Components",
-//         entry: "We learned about adding HTML components through javascript. It mostly made sense,  but I still don't fully understand what the DOM is.",
-//         mood: "Motivated"
-//     },
-//     {
-//         date: "21/01/20",
-//         concept: "Fetching Data & API",
-//         entry: "I had a hard time focusing on this lesson and will have to go back and watch a lot of videos.",
-//         mood: "Frustrated"
-//     },
-//     {
-//         date: "22/01/20",
-//         concept: "Events",
-//         entry: "We learned about event listeners. I stayed in the room instead of going to the hackery and actually managed to get a lot done.",
-//         mood: "Hopeful"
-//     }
-
-// ];
-
-// journalEntries.push(journalEntry);
-
-console.log(journalEntries);
-
+const getEntries = () => {
+fetch('http://localhost:3000/entries') // Fetch from the API
+    .then(resp => resp.json)  // Parse as JSON
+    .then(entries => {
+        renderJournalEntries(entries)// What should happen when we finally have the array?
+    });
+};
 
 /*
     Purpose: To create, and return, a string template that
@@ -60,11 +41,19 @@ const makeJournalEntryComponent = (journalEntry) => {
 */
 const renderJournalEntries = (entries) => {
     const entriesContainer = document.querySelector(".entryLog");
-    entries.forEach(entry => {
+    for (let i = 0; i < entries.length; i++) {
         const journalHtml = makeJournalEntryComponent(entry);
         entriesContainer.innerHTML += journalHtml;
-    });
+        console.log('sup world')
+    };
+    
+    // entries.forEach(entry => {
+    //     const journalHtml = makeJournalEntryComponent(entry);
+    //     entriesContainer.innerHTML += journalHtml;
+    // });
 }
 
 // Invoke the render function
-renderJournalEntries(journalEntries)
+// renderJournalEntries(journalEntries)
+
+getEntries();
