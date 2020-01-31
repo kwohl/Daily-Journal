@@ -6,11 +6,12 @@ const journalEntry = {
 };
 
 const getEntries = () => {
-fetch('http://localhost:3000/entries') // Fetch from the API
-    .then(resp => resp.json)  // Parse as JSON
+fetch('http://localhost:8088/entries') // Fetch from the API
+    .then(resp => resp.json())  // Parse as JSON
     .then(entries => {
-        renderJournalEntries(entries)// What should happen when we finally have the array?
-    });
+        renderJournalEntries(entries)
+        // What should happen when we finally have the array?
+        });
 };
 
 /*
@@ -41,16 +42,11 @@ const makeJournalEntryComponent = (journalEntry) => {
 */
 const renderJournalEntries = (entries) => {
     const entriesContainer = document.querySelector(".entryLog");
-    for (let i = 0; i < entries.length; i++) {
-        const journalHtml = makeJournalEntryComponent(entry);
-        entriesContainer.innerHTML += journalHtml;
-        console.log('sup world')
-    };
-    
-    // entries.forEach(entry => {
-    //     const journalHtml = makeJournalEntryComponent(entry);
-    //     entriesContainer.innerHTML += journalHtml;
-    // });
+
+        entries.forEach(entry => {
+            const journalHtml = makeJournalEntryComponent(entry);
+            entriesContainer.innerHTML += journalHtml;
+        })
 }
 
 // Invoke the render function
