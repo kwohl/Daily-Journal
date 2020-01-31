@@ -3,6 +3,8 @@
 
     Arguments: entries (array of objects)
 */
+import makeJournalEntryComponent from "./entryComponent.js";
+
 const renderJournalEntries = (entries) => {
     const entriesContainer = document.querySelector(".entryLog");
 
@@ -12,5 +14,6 @@ const renderJournalEntries = (entries) => {
         })
 }
 
+export default renderJournalEntries;
 // Invoke the render function
 // renderJournalEntries(journalEntries)

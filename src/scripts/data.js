@@ -20,3 +20,5 @@ const api = {
             .then(response => response.json())
     }
 }
+
+export default api;
