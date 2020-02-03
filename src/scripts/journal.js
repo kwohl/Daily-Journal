@@ -8,4 +8,7 @@
 import api from "./data.js";
 import renderJournalEntries from "./entriesDOM.js";
 
+
+
+
 api.getJournalEntries().then(renderJournalEntries);
