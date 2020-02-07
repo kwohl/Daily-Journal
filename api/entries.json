@@ -20,6 +20,27 @@
       "concept": "Events",
       "entry": "We learned about event listeners. I stayed in the room instead of going to the hackery and actually managed to get a lot done.",
       "mood": "Hopeful"
+    },
+    {
+      "date": "2020-02-12",
+      "concept": "kjbk",
+      "entry": "kjhb",
+      "mood": "sad",
+      "id": 4
+    },
+    {
+      "date": "2020-02-19",
+      "concept": "asdgasfd",
+      "entry": "asdfadsf",
+      "mood": "contemplative",
+      "id": 5
+    },
+    {
+      "date": "2020-02-13",
+      "concept": "Chaining Promises",
+      "entry": "refactored code to add a chained promise",
+      "mood": "hopeful",
+      "id": 6
     }
   ]
 }

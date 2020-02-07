@@ -9,13 +9,8 @@ import api from "./data.js";
 import renderJournalEntries from "./entriesDOM.js";
 
 
-const recordButton = document.querySelector("#journalSubmit")
-const dateField = document.querySelector("#journalDate")
-const conceptField = document.querySelector("#journalConcepts")
-const entryField = document.querySelector("#journalEntry")
-const moodField = document.querySelector("#journalMood")
-
 const createJournalEntry = (date, concept, entry, mood) => {
+
   return { 
     'date': date,
     'concept': concept,
@@ -24,15 +19,22 @@ const createJournalEntry = (date, concept, entry, mood) => {
     }
 }
 
+const recordButton = document.querySelector("#journalSubmit")
+
 recordButton.addEventListener("click", function () {
-    fetch("http://localhost:8088/entries", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(createJournalEntry(dateField.value, conceptField.value, entryField.value, moodField.value))
-    })
+    
+    const dateField = document.querySelector("#journalDate")
+    const conceptField = document.querySelector("#journalConcepts")
+    const entryField = document.querySelector("#journalEntry")
+    const moodField = document.querySelector("#journalMood")
+
+    const newEntry = createJournalEntry(dateField.value, conceptField.value, entryField.value, moodField.value)
+
+    api.saveJournalEntry(newEntry)
+        .then(api.getJournalEntries()).then(renderJournalEntries())
+    
 })
 
 
 api.getJournalEntries().then(renderJournalEntries);
+
