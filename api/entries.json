@@ -41,6 +41,13 @@
       "entry": "refactored code to add a chained promise",
       "mood": "hopeful",
       "id": 6
+    },
+    {
+      "date": "2020-02-10",
+      "concept": ".then",
+      "entry": "refactored journal code incorporating .then so that the filter method happened after the getJournalEntries function was complete",
+      "mood": "happy",
+      "id": 7
     }
   ]
 }
