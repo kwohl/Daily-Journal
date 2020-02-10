@@ -36,5 +36,23 @@ recordButton.addEventListener("click", function () {
 })
 
 
+
 api.getJournalEntries().then(renderJournalEntries);
 
+const moodButtons = document.getElementsByName("mood");
+const entriesContainer = document.querySelector(".entryLog");
+
+moodButtons.forEach(button => {
+    button.addEventListener("click", event => {
+        entriesContainer.innerHTML = ""
+
+        const moodValue = event.target.value
+        
+        api.getJournalEntries().then(entriesArray => {
+            const filteredEntries = entriesArray.filter(entry => entry.mood.toUpperCase() === moodValue.toUpperCase())
+
+    renderJournalEntries(filteredEntries)
+        })
+        
+    })     
+})
