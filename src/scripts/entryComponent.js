@@ -14,8 +14,11 @@ const makeJournalEntryComponent = (journalEntry) => {
         <li>Entry: ${journalEntry.entry}</li>
         <li>Mood: ${journalEntry.mood}</li>
     </ul>
+    <button id="deleteButton--${journalEntry.id}">
+        Delete
+    </button>
+    <hr>
     </section>
-
     `;
 }
 

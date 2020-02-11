@@ -22,20 +22,6 @@
       "mood": "Hopeful"
     },
     {
-      "date": "2020-02-12",
-      "concept": "kjbk",
-      "entry": "kjhb",
-      "mood": "sad",
-      "id": 4
-    },
-    {
-      "date": "2020-02-19",
-      "concept": "asdgasfd",
-      "entry": "asdfadsf",
-      "mood": "contemplative",
-      "id": 5
-    },
-    {
       "date": "2020-02-13",
       "concept": "Chaining Promises",
       "entry": "refactored code to add a chained promise",

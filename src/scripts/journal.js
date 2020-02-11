@@ -56,3 +56,21 @@ moodButtons.forEach(button => {
         
     })     
 })
+
+
+
+const entryLog = document.querySelector(".entryLog")
+
+entryLog.addEventListener("click", event => {
+    if (event.target.id.startsWith("deleteButton--")) {
+        //isolate id of entry to remove
+        const entryToDelete = event.target.id.split("--")[1]
+
+        //TODO: invoke delete method, get all entries, and render them
+        api.deleteJournalEntry(entryToDelete)
+            .then(api.getJournalEntries)
+            .then(renderJournalEntries)
+    }
+})
+
+
