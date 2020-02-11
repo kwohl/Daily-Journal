@@ -15,6 +15,11 @@ const makeJournalEntryComponent = (journalEntry) => {
         <li>Mood: ${journalEntry.mood}</li>
     </ul>
     </section>
+    <section class="buttons">
+        <button id="deleteButton--${journalEntry.id}">
+        Delete
+        </button>
+    </section>
 
     `;
 }
