@@ -14,13 +14,11 @@ const makeJournalEntryComponent = (journalEntry) => {
         <li>Entry: ${journalEntry.entry}</li>
         <li>Mood: ${journalEntry.mood}</li>
     </ul>
-    </section>
-    <section class="buttons">
-        <button id="deleteButton--${journalEntry.id}">
+    <button id="deleteButton--${journalEntry.id}">
         Delete
-        </button>
+    </button>
+    <hr>
     </section>
-
     `;
 }
 
